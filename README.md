@@ -57,6 +57,7 @@ Click to expand each feature domain and see the methods that must be implemented
 - [ ] `stock_predictor.features.engineering.build_feature_matrix`
 - [ ] `stock_predictor.features.selection.rank_features_by_importance`
 - [ ] `stock_predictor.features.selection.select_feature_view`
+- [ ] `tests/features/test_engineering.py`
 </details>
 
 <details>
@@ -130,9 +131,14 @@ stock-predictor/
 
 Each module contains documented method stubs that match the feature checklist above, making it straightforward to assign work units, track completion, and plug into CI/CD as the implementations arrive.
 
+## Testing Expectations
+
+- Pair every implemented method with unit tests under `tests/`, expanding suites per package (e.g., `tests/features/test_engineering.py`, `tests/data/test_ingestion_pipeline.py`).
+- Introduce integration tests that exercise end-to-end workflows once pipelines stabilize.
+- Maintain high coverage thresholds and run the full suite before merging changes.
+
 ## Next Steps
 
-1. Implement methods according to the roadmap milestones.
-2. Add integration tests as each feature area solidifies.
-3. Wire up continuous integration to execute linting, tests, and type checks.
-
+1. Containerize the application with Docker to standardize environments across contributors.
+2. Implement methods according to the roadmap milestones, adding unit tests in parallel for every module.
+3. Expand integration and end-to-end tests as features solidify, then wire up continuous integration to execute linting, tests, and type checks.
